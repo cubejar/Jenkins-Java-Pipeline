@@ -14,6 +14,7 @@ public class StartApplication {
     public String index(final Model model) {
         model.addAttribute("title", "CubeJar! This is a Springboot Xforce application using Maven");
         model.addAttribute("msg", "This application is deployed on to Kubernetes using Argo CD");
+        model.addAttribute("msg", "Github => Maven => SonarQube => DockerHub => ArgoCD");
         return "index";
     }
 
