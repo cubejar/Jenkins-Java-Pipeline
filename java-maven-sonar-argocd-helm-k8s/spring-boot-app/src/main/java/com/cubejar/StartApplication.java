@@ -12,7 +12,7 @@ public class StartApplication {
 
     @GetMapping("/")
     public String index(final Model model) {
-        model.addAttribute("title", "CubeJar! This is a Springboot application using Maven");
+        model.addAttribute("title", "CubeJar! This is a Springboot Xforce application using Maven");
         model.addAttribute("msg", "This application is deployed on to Kubernetes using Argo CD");
         return "index";
     }
