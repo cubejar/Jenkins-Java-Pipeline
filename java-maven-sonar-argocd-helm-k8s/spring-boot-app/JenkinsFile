@@ -53,7 +53,7 @@ pipeline {
             GIT_USER_NAME = "cubejar"
 
             // GIT_REPO_NAME = "Jenkins-Java-Pipeline"
-            // GIT_USER_NAME = "cubejar"
+
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
