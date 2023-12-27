@@ -53,7 +53,8 @@ pipeline {
             GIT_USER_NAME = "cubejar"
         }
         steps {
-            withCredentials([string(credentialsId: 'github-cubejar-repo-git-admin-token', variable: 'GITHUB_TOKEN')]) {
+            // withCredentials([string(credentialsId: 'github-cubejar-repo-git-admin-token', variable: 'GITHUB_TOKEN')]) {
+            withCredentials([string(credentialsId: 'cubejar-repo-git-admin-token', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "raj.avudaiappan@gmail.com"
                     git config user.name "cubejar"
