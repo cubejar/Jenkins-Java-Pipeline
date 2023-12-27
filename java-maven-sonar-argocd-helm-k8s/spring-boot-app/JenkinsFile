@@ -50,7 +50,7 @@ pipeline {
     stage('Update Deployment File') {
         environment {
             // GIT_REPO_NAME = "GitOps-Pipelines"
-            // GIT_USER_NAME = "cubejar" //
+            // GIT_USER_NAME = "cubejar" 
 
             GIT_REPO_NAME = "Jenkins-Java-Pipeline"
             GIT_USER_NAME = "cubejar"
