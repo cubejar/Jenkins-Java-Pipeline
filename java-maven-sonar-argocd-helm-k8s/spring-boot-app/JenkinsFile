@@ -1,4 +1,4 @@
-//Jenkins - pipeline syntax - Springboot - Java - 12
+//Jenkins - pipeline syntax - Springboot - Java 
 pipeline {
   agent {
     docker {
