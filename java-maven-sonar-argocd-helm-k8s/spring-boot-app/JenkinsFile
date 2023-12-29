@@ -58,7 +58,6 @@ pipeline {
                     git config user.email "raj.avudaiappan@gmail.com"
                     git config user.name "cubejar"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    git stash
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git clean -f -d
@@ -70,10 +69,3 @@ pipeline {
     }
   }
 }
-
-                    // git stash
-                    // git checkout -f main
-                    // git checkout -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                    // git pull origin                  
-                    // git clean -f -d
-                    BUILD_NUMBER=${BUILD_NUMBER}
