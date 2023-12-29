@@ -49,7 +49,8 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "Jenkins-Java-Pipeline"
+            // GIT_REPO_NAME = "Jenkins-Java-Pipeline"
+            GIT_REPO_NAME = "GitOps-Pipelines"
             GIT_USER_NAME = "cubejar"
         }
         steps {
@@ -59,8 +60,10 @@ pipeline {
                     git config user.name "cubejar"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     git clean -f -d
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                    git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+                    // sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
+                    // git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+                    git add spring-boot-app-manifests/deployment.yml
                     # git clean -f -d
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
