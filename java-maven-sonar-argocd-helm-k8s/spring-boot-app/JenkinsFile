@@ -56,7 +56,8 @@ pipeline {
                 sh '''
                     git config user.email "raj.avudaiappan@gmail.com"
                     git config user.name "cubejar"
-                    git checkout -f main
+                    // git checkout -f main
+                    git checkout -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git pull                   
                     git clean -f -d
                     BUILD_NUMBER=${BUILD_NUMBER}
