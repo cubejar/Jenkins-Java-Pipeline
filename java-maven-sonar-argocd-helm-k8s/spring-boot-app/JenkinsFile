@@ -1,3 +1,4 @@
+//Jenkins - pipeline syntax
 pipeline {
   agent {
     docker {
