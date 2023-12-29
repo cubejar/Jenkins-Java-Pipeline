@@ -59,7 +59,7 @@ pipeline {
                     git stash
                     git checkout -f main
                     // git checkout -f java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                    git pull                   
+                    git pull origin                  
                     git clean -f -d
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
